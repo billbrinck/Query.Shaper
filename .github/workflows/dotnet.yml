@@ -26,12 +26,6 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Pack
       run: dotnet pack --configuration Release --output .nupkg
-    - uses: actions/upload-artifact@v3
-      with:
-       name: nuget
-       if-no-files-found: error
-       retention-days: 7
-       path: ${{ env.NuGetDirectory }}/*.nupkg
     - name: Publish to NuGet
       env:
         NUGET_TOKEN: ${{ secrets.PUBLISH_TO_NUGET_ORG }}
