@@ -13,7 +13,7 @@
         <RootNamespace>Query.Shaper</RootNamespace>
         <PackageTags>Sql,Query,Shaper,Builder,SqlQuery,.NET,C#</PackageTags>
         <PackageProjectUrl>https://github.com/billbrinck/Query.Shaper</PackageProjectUrl>
-        <PackageReadmeFile>\README.md</PackageReadmeFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 </Project>
