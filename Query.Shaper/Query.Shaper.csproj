@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         
         <PackageId>Query.Shaper</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.2-alpha</Version>
         <Authors>Bill Brinck</Authors>
         <PackageDescription>A .NET library to build SQL queries</PackageDescription>
         <RepositoryUrl>https://github.com/billbrinck/Query.Shaper</RepositoryUrl>
