@@ -1,5 +1,5 @@
 # Query.Shaper
-A .NET library to generate SQL queries with a fluent API
+A .NET library to generate SQL queries
 
 ## IQueryBuilder Interface
 The IQueryBuilder interface defines a set of methods for constructing parameterized SQL queries with various clauses and operators. This interface provides a flexible and structured way to build queries for database operations such as SELECT, INSERT, UPDATE, and DELETE. Below is an overview of the methods and their functionalities:
