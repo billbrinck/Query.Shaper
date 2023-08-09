@@ -24,13 +24,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      
-  publish:
-    runs-on: ubuntu-latest
-    steps:
     - name: Pack
-      run:
-        dotnet pack --configuration Release
+      run: dotnet pack --configuration Release
     - name: Publish to NuGet
-      run:
-        dotnet nuget push --source "github"
+      run: dotnet nuget push --source "github"
+      
