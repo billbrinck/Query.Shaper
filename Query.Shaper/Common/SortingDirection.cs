@@ -1,4 +1,4 @@
-﻿namespace SQL.Shaper.Common;
+﻿namespace Query.Shaper.Common;
 
 public enum SortingDirection
 {

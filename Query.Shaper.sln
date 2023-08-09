@@ -4,9 +4,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{6A932D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5E99E6DB-ABB7-4F5A-B12F-0D93026816DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL.Shaper.Tests", "SQL.Shaper.Tests\SQL.Shaper.Tests.csproj", "{73E8F7ED-2FAF-40F5-944A-7C32CFF16016}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Query.Shaper.Tests", "Query.Shaper.Tests\Query.Shaper.Tests.csproj", "{73E8F7ED-2FAF-40F5-944A-7C32CFF16016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL.Shaper", "SQL.Shaper\SQL.Shaper.csproj", "{1DC4D220-3EC0-492D-A823-E621420C7E74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Query.Shaper", "Query.Shaper\Query.Shaper.csproj", "{1DC4D220-3EC0-492D-A823-E621420C7E74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

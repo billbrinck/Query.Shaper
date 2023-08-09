@@ -1,7 +1,7 @@
-﻿using SQL.Shaper.Common;
-using SQL.Shaper.Interfaces;
+﻿using Query.Shaper.Common;
+using Query.Shaper.Interfaces;
 
-namespace SQL.Shaper.Builder;
+namespace Query.Shaper.Builder;
 
 public partial class SqlQueryBuilder
 {

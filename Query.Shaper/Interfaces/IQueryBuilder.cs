@@ -1,7 +1,7 @@
-﻿using SQL.Shaper.Common;
-using SQL.Shaper.Models;
+﻿using Query.Shaper.Common;
+using Query.Shaper.Models;
 
-namespace SQL.Shaper.Interfaces;
+namespace Query.Shaper.Interfaces;
 
 public interface IQueryBuilder
 {

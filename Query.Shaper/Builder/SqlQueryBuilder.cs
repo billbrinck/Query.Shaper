@@ -1,9 +1,9 @@
 ﻿using System.Text;
-using SQL.Shaper.Common;
-using SQL.Shaper.Interfaces;
-using SQL.Shaper.Models;
+using Query.Shaper.Common;
+using Query.Shaper.Interfaces;
+using Query.Shaper.Models;
 
-namespace SQL.Shaper.Builder;
+namespace Query.Shaper.Builder;
 
 public partial class SqlQueryBuilder : IQueryBuilder
 {

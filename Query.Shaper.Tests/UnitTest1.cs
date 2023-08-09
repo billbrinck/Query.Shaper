@@ -1,4 +1,4 @@
-namespace SQL.Shaper.Tests;
+namespace Query.Shaper.Tests;
 
 public class UnitTest1
 {

@@ -1,6 +1,6 @@
-﻿using SQL.Shaper.Common;
+﻿using Query.Shaper.Common;
 
-namespace SQL.Shaper.Helper
+namespace Query.Shaper.Helper
 {
     public static class QueryHelper
     {

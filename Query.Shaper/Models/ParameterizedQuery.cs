@@ -1,5 +1,5 @@
 ﻿
-namespace SQL.Shaper.Models
+namespace Query.Shaper.Models
 {
     public class ParameterizedQuery
     {
