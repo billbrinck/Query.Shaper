@@ -26,6 +26,14 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Pack
       run: dotnet pack --configuration Release
+    - uses: actions/upload-artifact@v3
+      with:
+       name: nuget
+       if-no-files-found: error
+       retention-days: 7
+       path: ${{ env.NuGetDirectory }}/*.nupkg
     - name: Publish to NuGet
-      run: dotnet nuget push --source "github"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push ./SQL.Shaper/out/*.nupkg --source "github -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/billbrinck/index.json --skip-duplicate --no-symbols
       
