@@ -34,6 +34,6 @@ jobs:
        path: ${{ env.NuGetDirectory }}/*.nupkg
     - name: Publish to NuGet
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: dotnet nuget push ./SQL.Shaper/out/*.nupkg --source "github -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/billbrinck/index.json --skip-duplicate --no-symbols
+        NUGET_TOKEN: ${{ secrets.PUBLISH_TO_NUGET_ORG }}
+      run: dotnet nuget push *.nupkg -k ${NUGET_TOKEN} -s https://nuget.pkg.github.com/billbrinck/index.json --skip-duplicate --no-symbols
       
