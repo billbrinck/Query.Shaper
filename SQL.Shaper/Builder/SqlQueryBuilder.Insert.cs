@@ -5,6 +5,12 @@ namespace SQL.Shaper.Builder;
 
 public partial class SqlQueryBuilder
 {
+    private string[] _insertColumnNames = Array.Empty<string>();
+    private bool _insertValuesAttached;
+
+    // When calling Values() we need to maintain a index so that we can add the parameters
+    private int _insertValuesIndex;
+
     public IQueryBuilder Insert<TEntity>(TEntity entity, string idColumnName = DefaultIdColumnName)
     {
         var type = typeof(TEntity);
@@ -58,4 +64,45 @@ public partial class SqlQueryBuilder
         return this;
     }
 
+
+    public IQueryBuilder Values(params object?[] values)
+    {
+        _insertValuesIndex++;
+
+        if (!_insertValuesAttached)
+        {
+            Append(SqlKeywords.Values);
+
+            _insertValuesAttached = true;
+        }
+        else
+        {
+            Append(",");
+        }
+
+        Append("(");
+        try
+        {
+            for (var i = 0; i < _insertColumnNames.Length; i++)
+            {
+                var columnName = _insertColumnNames[i];
+
+                var parameterName = $"{columnName}{_insertValuesIndex}";
+
+                Append(parameterName);
+
+                if (i < _insertColumnNames.Length - 1) Append(", ");
+
+                AddParameter(parameterName, values[i]);
+            }
+
+            Append(")");
+        }
+        catch (IndexOutOfRangeException)
+        {
+            throw new Exception("Number of insert parameters do not match number of values provided");
+        }
+
+        return this;
+    }
 }

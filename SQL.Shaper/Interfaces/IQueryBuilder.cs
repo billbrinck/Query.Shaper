@@ -57,7 +57,7 @@ public interface IQueryBuilder
     public IQueryBuilder OutputInserted(string columnName);
 
     public IQueryBuilder Order(string sorting, SortingDirection direction = SortingDirection.Asc,
-        string? defaultSorting = default, SortingDirection defaultSortingDirection = SortingDirection.Asc);
+        string? defaultSorting = default);
 
     public IQueryBuilder WhereIn<TEntity>(string columnName, ClauseOperator clauseOperator = ClauseOperator.And,
         params TEntity[] valueParams);
