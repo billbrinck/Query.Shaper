@@ -10,6 +10,7 @@ public partial class SqlQueryBuilder : IQueryBuilder
     private const string QuerySeparator = ";";
     private const string DefaultIdColumnName = "Id";
     private const char ParameterIdentifierSymbol = '@';
+    private const string AllSelector = "*";
 
     private readonly IDictionary<string, object?> _parameters = new Dictionary<string, object?>();
     private readonly StringBuilder _query = new();
@@ -28,6 +29,8 @@ public partial class SqlQueryBuilder : IQueryBuilder
         return this;
     }
 
+    private string SeparateByCommas(IEnumerable<string> values) => string.Join(",", values);
+
     private string[] FormatSelectors(IEnumerable<string> columnNames) => columnNames.Select(FormatSelector).ToArray();
 
     private string FormatParameterName(string parameterName) =>
@@ -36,11 +39,10 @@ public partial class SqlQueryBuilder : IQueryBuilder
             : $"{ParameterIdentifierSymbol}{parameterName}";
 
     private string FormatSelector(string selector) =>
-        selector.Trim().Equals("*") || selector.Contains('[') || selector.Contains(']')
+        selector.Trim().Equals(AllSelector) || selector.Contains('[') || selector.Contains(']')
             ? selector
             : $"[{selector}]";
-
-
+    
     public ParameterizedQuery Build() => new()
     {
         Query = _query.ToString(),

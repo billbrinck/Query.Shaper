@@ -7,24 +7,24 @@ public partial class SqlQueryBuilder
 {
     public IQueryBuilder Select(params string[] columnNames)
     {
-        Append($"{SqlKeywords.Select} {string.Join(", ", FormatSelectors(columnNames))} ");
+        Append($"{SqlKeywords.Select} {SeparateByCommas(FormatSelectors(columnNames))} ");
         return this;
     }
 
     public IQueryBuilder SelectTop(int numberOfRows, params string[] columnNames)
     {
         AppendLine(
-            $"{SqlKeywords.Select} {SqlKeywords.Top} {numberOfRows} {string.Join(",", FormatSelectors(columnNames))} ");
+            $"{SqlKeywords.Select} {SqlKeywords.Top} {numberOfRows} {SeparateByCommas(FormatSelectors(columnNames))} ");
         return this;
     }
 
-    public IQueryBuilder SelectAll() => Select("*");
+    public IQueryBuilder SelectAll() => Select(AllSelector);
 
-    public IQueryBuilder SelectTopAll(int numberOfRows) => SelectTop(numberOfRows, "*");
+    public IQueryBuilder SelectTopAll(int numberOfRows) => SelectTop(numberOfRows, AllSelector);
 
     public IQueryBuilder From(params string[] tableNames)
     {
-        AppendLine($"{SqlKeywords.From} {string.Join(",", FormatSelectors(tableNames))} ");
+        AppendLine($"{SqlKeywords.From} {SeparateByCommas(FormatSelectors(tableNames))} ");
         return this;
     }
 
@@ -36,7 +36,7 @@ public partial class SqlQueryBuilder
 
     public IQueryBuilder CountAll()
     {
-        Append($"{Count}(*) ");
+        Append($"{Count}({AllSelector}) ");
         return this;
     }
 }
