@@ -11,6 +11,9 @@
         <PackageDescription>A .NET library to build SQL queries</PackageDescription>
         <RepositoryUrl>https://github.com/billbrinck/Query.Shaper</RepositoryUrl>
         <RootNamespace>Query.Shaper</RootNamespace>
+        <PackageTags>Sql,Query,Shaper,Builder,SqlQuery,.NET,C#</PackageTags>
+        <PackageProjectUrl>https://github.com/billbrinck/Query.Shaper</PackageProjectUrl>
+        <PackageReadmeFile>..\README.md</PackageReadmeFile>
     </PropertyGroup>
 
 </Project>
