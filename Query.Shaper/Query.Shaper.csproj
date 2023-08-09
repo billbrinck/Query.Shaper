@@ -16,4 +16,8 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" pack="true" PackagePath="/" />
+    </ItemGroup>
 </Project>
