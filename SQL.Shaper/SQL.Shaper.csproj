@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         
-        <PackageId>SQL.Sharper</PackageId>
+        <PackageId>SQL.Shaper</PackageId>
         <Version>1.0.0</Version>
         <Authors>Bill Brinck</Authors>
         <PackageDescription>A .NET library to build SQL queries</PackageDescription>
