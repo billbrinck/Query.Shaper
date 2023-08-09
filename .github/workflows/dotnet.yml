@@ -35,5 +35,5 @@ jobs:
     - name: Publish to NuGet
       env:
         NUGET_TOKEN: ${{ secrets.PUBLISH_TO_NUGET_ORG }}
-      run: dotnet nuget push ./nupkg/*.nupkg -k ${NUGET_TOKEN} -s https://nuget.pkg.github.com/billbrinck/index.json --skip-duplicate --no-symbols
+      run: dotnet nuget push /nupkg/*.nupkg -k ${NUGET_TOKEN} -s https://nuget.pkg.github.com/billbrinck/index.json --skip-duplicate --no-symbols
       
